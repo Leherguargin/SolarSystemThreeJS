@@ -33,7 +33,7 @@ const addEvents = (renderer, camera, pivot) => {
     pivot.rotation.set(0, 0, 0);
     pivot.position.set(0, 0, 0);
     camera.lookAt(0, 0, 0);
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 0, 500);
   });
 };
 
