@@ -33,7 +33,7 @@ const addEvents = (renderer, camera, pivot) => {
     pivot.rotation.set(0, 0, 0);
     pivot.position.set(0, 0, 0);
     camera.lookAt(0, 0, 0);
-    camera.position.set(0, 0, 40);
+    camera.position.set(0, 0, 5);
   });
 };
 
@@ -48,12 +48,13 @@ const getTexture = (index) => {
   return texture;
 };
 
-const getBall = (radius, textureNum) => {
+const getBall = (radius, textureNum, x, y, z) => {
   const geometry = new THREE.SphereGeometry(radius, 32, 16);
   const material = new THREE.MeshBasicMaterial({
-    map: this.getTexture(textureNum)
+    map: getTexture(textureNum)
   });
   const sphere = new THREE.Mesh(geometry, material);
+  sphere.position.set(x, y, z);
   return sphere;
 };
 
