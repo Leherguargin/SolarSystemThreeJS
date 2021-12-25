@@ -29,4 +29,5 @@ function animate() {
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
 }
+utils.addEvents(renderer);
 animate();
