@@ -9,6 +9,10 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
+const pivot = new THREE.Group();
+pivot.position.set(0, 0, 0);
+pivot.add(camera);
+scene.add(pivot);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -29,5 +33,5 @@ function animate() {
   cube.rotation.x += 0.01;
   cube.rotation.y += 0.01;
 }
-utils.addEvents(renderer);
+utils.addEvents(renderer, camera, pivot);
 animate();
