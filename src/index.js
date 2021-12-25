@@ -18,11 +18,10 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-camera.position.z = 500;
+camera.position.z = 300;
 
 //planets
-const earthRadius = 1;
-//słońce 10 razy mniejsze niż w rzeczywistości
+const earthRadius = 12.756;
 const radiuses = [
   10.9,
   0.3825,
@@ -34,7 +33,7 @@ const radiuses = [
   4.0074,
   3.8827
 ].map((r) => r * earthRadius);
-//zmniejszone odległości przez 1000, aby było coś widać :P
+//zmniejszone odległości przez 1000, aby było coś widać :P (oprócz słońca)
 const distancesFromSun = [
   0,
   57910,
@@ -45,7 +44,7 @@ const distancesFromSun = [
   1429400,
   2870990,
   4504000
-];
+].map((distance) => distance / 1000);
 const sun = utils.getBall(radiuses[0], 0, distancesFromSun[0], 0, 0);
 const mercury = utils.getBall(radiuses[1], 1, distancesFromSun[1], 0, 0);
 const venus = utils.getBall(radiuses[2], 0, distancesFromSun[2], 0, 0);
