@@ -21,4 +21,4 @@ const getBall = (radius, textureNum) => {
   return sphere;
 };
 
-// export default { getTexture, getBall };
+export { getTexture, getBall };
