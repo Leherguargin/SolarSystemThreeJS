@@ -22,8 +22,9 @@ camera.position.z = 500;
 
 //planets
 const earthRadius = 1;
+//słońce 10 razy mniejsze niż w rzeczywistości
 const radiuses = [
-  109,
+  10.9,
   0.3825,
   0.9489,
   1,
@@ -33,16 +34,17 @@ const radiuses = [
   4.0074,
   3.8827
 ].map((r) => r * earthRadius);
+//zmniejszone odległości przez 1000, aby było coś widać :P
 const distancesFromSun = [
   0,
-  57910000,
-  108200000,
-  149600000,
-  227940000,
-  778330000,
-  1429400000,
-  2870990000,
-  4504000000
+  57910,
+  108200,
+  149600,
+  227940,
+  778330,
+  1429400,
+  2870990,
+  4504000
 ];
 const sun = utils.getBall(radiuses[0], 0, distancesFromSun[0], 0, 0);
 const mercury = utils.getBall(radiuses[1], 1, distancesFromSun[1], 0, 0);

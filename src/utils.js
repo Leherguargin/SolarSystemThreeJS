@@ -23,10 +23,11 @@ const addEvents = (renderer, camera, pivot) => {
   });
   renderer.domElement.addEventListener("wheel", (event) => {
     const direction = event.wheelDelta;
+    const sensitivity = 10;
     if (direction > 0) {
-      camera.position.z--;
+      camera.position.z -= sensitivity;
     } else {
-      camera.position.z++;
+      camera.position.z += sensitivity;
     }
   });
   renderer.domElement.addEventListener("dblclick", (event) => {
